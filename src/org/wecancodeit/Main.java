@@ -16,9 +16,9 @@ public class Main {
 
         Animal otter = new Otter("Otto");
         Animal robin = new Robin("Robin");
-        Animal squirrel = new Squirrel("Rocky");
+        Animal squirrel = new Squirrel("Shiny");
         Animal chicken = new Chicken("Little");
-
+        Animal flyinSquirrel = new FlyingSquirrel("Rocky");
 
         Collection<Animal> animals = new ArrayList<>();
 
@@ -28,7 +28,7 @@ public class Main {
         animals.add(robin);
         animals.add(squirrel);
         animals.add(chicken);
-
+        animals.add(flyinSquirrel);
         for (Animal animal : animals) {
             runAllAnimalMethods(animal);
         }
@@ -42,6 +42,10 @@ public class Main {
         animal.move();
         animal.breathe();
         animal.eat();
+
+        if(animal instanceof Flying){
+            ((Flying) animal).fly();
+        }
         animal.reproduce();
         animal.passAway();
 
